@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root{
+  --green-color: #7ACC2D;
+  --white-color:white;
+  --black-color: #313337;
+}
+
+/* -----------------propiedades generales----------------- */
+html,body{
+  padding:0px;
+  margin:0px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+  display: grid;
+  grid-template: 50px 1fr 50px / minmax(320px, 1280px) ;
+  justify-content: center;
+  grid-template-areas: "nav-top"
+                       "body-main"
+                       "bottom-footer";
+}
+.nav-top{
+  grid-area: nav-top;
+}
+
+.bottom-footer{
+  grid-area: bottom-footer;
+}
+/* ------------------ inicio nav -------------*/
+nav{
+  display: flex;
+  background-color: #7ACC2D;
+  padding: 10px;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav li{
+  padding-left: 20px;
+  list-style: none;
+}
+
+nav li a{
+  color: black;
+  text-decoration: none;
+}
+
+nav li a:hover{
+  color: white;
+}
+
+/* ------------------------ Main section */
+
+.body-main{
+  grid-area: body-main;
+  display: grid;
+  grid-template: 300px repeat(3, auto)/ minmax(320px, 1280px);
+  grid-template-areas: "section-welcome"
+                       "section-product"
+                       "section-product2"
+                       "section-coment";
+  grid-gap: 50px;
+}
+
+.section-welcome{
+  grid-area: section-welcome;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.main_section{
+  width: 70%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: var(--black-color);
+}
+
+.section-product{
+  grid-area: section-product;
+  display: grid;
+  grid-template:  minmax(200px, 500px) / minmax(20px, 1fr);
+}
+
+.img-background{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url('../images/curve.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-size: cover; */
+  background-position: center bottom;
+  /* padding:20%; */
+}
+
+.content-products{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: grid;
+  grid-template: auto/ repeat(2, auto);
+  grid-gap: 20px;
+}
+
+.content:nth-of-type(1){
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.content:nth-of-type(2){
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.content-products .content{
+  width: 239px;
+  height: 275px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 1px #c1bcbc;
+}
+.content h1{
+  margin: 10px;
+}
+.content p{
+  margin: 10px;
+}
+
+.img_content{
+  text-align: center;
+}
+
+.main_button{
+  background-color: var(--green-color);
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  color: var(--white-color);
+  border:0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.main_button:hover{
+  background-color: #5e9e22;
+}
+
+.section-product2{
+  margin-top: 100px;
+  grid-area: section-product2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20px, 256px));
+  align-items: center;
+  justify-content: center;
+}
+
+.product1{
+  width: 162px;
+}
+.product1 img{
+  width: 150px;
+}
+.product1 h3{
+  text-align: center;
+  font-size: 17px;
+}
+
+.section-coment{
+  grid-area: section-coment;
+  display: grid;
+  grid-template: 47px 1fr / repeat(4, minmax(20px, 256px));
+  justify-content: center;
+  align-items: center;
+  grid-gap: 30px 0px;
+  margin-bottom: 30px;
+}
+
+.section-coment h1{
+  font-size: 30px;
+  text-align: center;
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+
+.product2{
+  width: 239px;
+}
+.product2 h3{
+  font-size: 17px;
+}
+.product2:nth-of-type(1){
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.product2:nth-of-type(2){
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.product2:nth-of-type(3){
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.product2:nth-of-type(4){
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+footer{
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.bottom-footer div{
+  padding: 10px;
+  width: auto;
+}
+.section-right{
+  text-align: right;
+}
+.section-right a{
+  color: var(--white-color);
+}
+
+/* --------------------Productos----------------------- */
+.container-productos{
+  display: grid;
+  grid-template: 50px 1fr 50px / minmax(320px, 1280px) ;
+  justify-content: center;
+  grid-template-areas: "nav-top"
+                       "body-main"
+                       "bottom-footer";
+  grid-gap: 100px;
+}
+.producto img{
+  width: 200px;
+}
+.producto h3{
+  margin: 10px;
+  font-size: 17px;
+}
+
+.modulo-productos{
+  display: grid;
+  grid-template: repeat(8, 200px) / minmax(200px, 768px);
+  justify-content: center;
+  grid-gap: 30px;
+}
+.derecha{
+  display: grid;
+  grid-template: 50px auto / repeat(2, auto);
+  grid-gap: 0px 30px;
+}
+
+.izquierda{
+  display: grid;
+  grid-template: 50px auto / repeat(2, auto);
+  grid-gap: 0px 30px;
+}
+
+.derecha #image0, #image2, #image4, #image6, #image8{
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+.izquierda #image1, #image3, #image5, #image7{
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+.derecha #title-produ0, #title-produ2, #title-produ4, #title-produ6,
+#title-produ8{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.izquierda #title-produ1, #title-produ3, #title-produ5, #title-produ7{
+  margin-left: 50px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.derecha #p-0,#p-2,#p-4,#p-6,#p-8{
+  margin-right: 50px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.izquierda #p-1,#p-3,#p-5,#p-7{
+  margin-left: 50px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+
+/* ----------------modulo de Pago---------------- */
+
+label{
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.container {
+  height: 100vh;
+}
+.body-main-pago{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modulo-pago{
+  display: grid;
+  grid-template: 400px / 240px 340px ;
+  grid-template-areas: "producto-pago formulario";
+  grid-gap: 20px;
+}
+
+.img-pro{
+  text-align: center;
+}
+.producto-pago{
+  grid-area: producto-pago;
+}
+
+.formulario{
+  grid-area: formulario;
+}
+
+.formulario input{
+  margin: 10px 20px 5px 20px;
+  width: 300px;
+  height: 35px;
+  border: 1px solid #313337;
+  border-radius: 2px;
+}
